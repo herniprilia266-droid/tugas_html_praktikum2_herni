@@ -1,0 +1,155 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pemesanan Barang</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+            margin: 30px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #999;
+        }
+
+        nav {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #777;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .baris {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tombol {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>Hasil Pemesanan Barang</h2>
+
+        <nav>
+            <a href="prak2_kelompok_1_desainuiux_pemweb.html">Home</a> |
+            <a href="#">Register</a> |
+            <a href="#">Policy</a> |
+            <a href="#">About</a>
+        </nav>
+
+        <h3>Informasi Pemesanan</h3>
+
+        <div class="baris">
+            <strong>Title Here:</strong>
+            <span id="judul"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Description:</strong>
+            <span id="deskripsi"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Account Holder:</strong>
+            <span id="pemilik"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Account Number:</strong>
+            <span id="nomor"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Bank:</strong>
+            <span id="bank"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Transaction:</strong>
+            <span id="transaksi"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Send to Mobile Phone:</strong>
+            <span id="hp"></span>
+        </div>
+
+        <div class="baris">
+            <strong>Send to Email:</strong>
+            <span id="email"></span>
+        </div>
+
+        <div class="tombol">
+            <button onclick="window.print()">Print Hasil Pemesanan</button>
+            <br><br>
+            <a href="prak2_kelompok_1_desainuiux_pemweb.html">
+                Kembali ke Form
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const data = new URLSearchParams(window.location.search);
+
+        document.getElementById("judul").textContent =
+            data.get("judul") || "-";
+
+        document.getElementById("deskripsi").textContent =
+            data.get("deskripsi") || "-";
+
+        document.getElementById("pemilik").textContent =
+            data.get("pemilik") || "-";
+
+        document.getElementById("nomor").textContent =
+            data.get("nomor") || "-";
+
+        document.getElementById("bank").textContent =
+            data.get("bank") || "-";
+
+        document.getElementById("transaksi").textContent =
+            data.get("transaksi") || "-";
+
+        document.getElementById("hp").textContent =
+            data.get("kirim_hp") === "Ya" ? (data.get("hp") || "-") : "Tidak dipilih";
+
+        document.getElementById("email").textContent =
+            data.get("kirim_email") === "Ya" ? (data.get("email") || "-") : "Tidak dipilih";
+    </script>
+</body>
+</html>
+```

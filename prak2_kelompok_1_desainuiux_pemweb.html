@@ -1,0 +1,215 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eeeeee;
+            margin: 30px;
+        }
+
+        .container {
+            width: 700px;
+            max-width: 95%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #999;
+        }
+
+        nav {
+            text-align: center;
+            border: 1px solid #777;
+            padding: 10px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            margin: 0 12px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .form-content {
+            display: flex;
+            gap: 25px;
+        }
+
+        .gambar {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            flex-shrink: 0;
+        }
+
+        form {
+            flex: 1;
+        }
+
+        .baris {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        textarea {
+            height: 75px;
+        }
+
+        .pilihan {
+            margin: 12px 0;
+        }
+
+        .pilihan input {
+            width: auto;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 8px 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tombol {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-content {
+                flex-direction: column;
+            }
+
+            .baris {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2 style="text-align:center;">Form Pemesanan Barang</h2>
+
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Generate Link</a> |
+            <a href="#">Transaction History</a> |
+            <a href="#">Policy</a> |
+            <a href="#">Logout</a>
+        </nav>
+
+        <div class="form-content">
+
+            <div>
+                <div class="gambar">Gambar Barang</div>
+
+                <p>
+                    <label for="gambar">Upload Picture</label>
+                    <input type="file" id="gambar" accept="image/*">
+                </p>
+            </div>
+
+            <form action="hasil_pemesanan.html" method="get">
+
+                <div class="baris">
+                    <label for="judul">Title Here:</label>
+                    <input type="text" id="judul" name="judul"
+                           value="MacBook Air E800" required>
+                </div>
+
+                <div class="baris">
+                    <label for="deskripsi">Description:</label>
+                    <textarea id="deskripsi" name="deskripsi">Year: 2000
+Model:
+Condition: Mint</textarea>
+                </div>
+
+                <div class="baris">
+                    <label for="nomor">Account Number:</label>
+                    <input type="text" id="nomor" name="nomor"
+                           placeholder="Masukkan nomor rekening" required>
+                </div>
+
+                <div class="baris">
+                    <label for="bank">Bank:</label>
+                    <select id="bank" name="bank" required>
+                        <option value="">Pilih Bank</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BNI">BNI</option>
+                        <option value="BRI">BRI</option>
+                        <option value="Mandiri">Mandiri</option>
+                        <option value="BSI">BSI</option>
+                    </select>
+                </div>
+
+                <div class="baris">
+                    <label for="pemilik">Account Holder:</label>
+                    <input type="text" id="pemilik" name="pemilik"
+                           placeholder="Nama pemilik rekening" required>
+                </div>
+
+                <div class="baris">
+                    <label for="transaksi">Transaction:</label>
+                    <input type="number" id="transaksi" name="transaksi"
+                           min="1" max="3" value="1" required>
+                </div>
+
+                <div class="pilihan">
+                    <label>
+                        <input type="checkbox" name="kirim_hp" value="Ya">
+                        Send to Mobile Phone
+                    </label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="kirim_email" value="Ya">
+                        Send to Email
+                    </label>
+                </div>
+
+                <div class="baris">
+                    <label for="hp">Send to Mobile Phone:</label>
+                    <input type="tel" id="hp" name="hp"
+                           placeholder="08xxxxxxxxxx">
+                </div>
+
+                <div class="baris">
+                    <label for="email">Send to Email:</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="nama@email.com">
+                </div>
+
+                <div class="tombol">
+                    <button type="submit">Generate New Link</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+```
